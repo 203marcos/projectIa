@@ -17,7 +17,7 @@ app.add_middleware(
 )
 
 # Carregar dados e ajustar modelos ao iniciar
-df = ler_dados_csv('/home/pythonAva/trabalhoIa/data/Dataset Projeto IA.csv')
+df = ler_dados_csv('data/Dataset Projeto IA.csv')
 X = df[['Idade', 'Uso_Beber', 'Uso_Cozinhar', 'Arsenio_Agua']].values
 y = df['Arsenio_Unhas'].values
 beta = regressaoMultipla.regressao_linear_multipla(X, y, intercept=True)
