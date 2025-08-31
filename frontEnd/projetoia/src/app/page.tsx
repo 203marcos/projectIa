@@ -84,22 +84,22 @@ export default function ArsenicAnalysisDashboard() {
 
   // Buscar dados da API ao montar
   useEffect(() => {
-    fetch("http://localhost:8000/api/modelo")
+    fetch("https://projetoia-av1.onrender.com/api/modelo")
       .then((res) => res.json())
       .then((data) => setModelResults(data));
 
-    fetch("http://localhost:8000/api/modelo-alternativo")
+    fetch("https://projetoia-av1.onrender.com/api/modelo-alternativo")
       .then((res) => res.json())
       .then((data) => setAlternativeModel(data));
 
-    fetch("http://localhost:8000/api/residuos")
+    fetch("https://projetoia-av1.onrender.com/api/residuos")
       .then((res) => res.json())
       .then((data) => setResidualsData(data));
   }, []);
 
   // Predição via API
   const handlePredict = () => {
-    fetch("http://localhost:8000/api/predizer", {
+    fetch("https://projetoia-av1.onrender.com/api/predizer", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
