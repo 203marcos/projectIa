@@ -20,7 +20,7 @@ import {
   Scatter,
 } from "recharts";
 import { Calculator, TrendingUp, FileText, BarChart3, Beaker } from "lucide-react";
-
+import { ThemeToggle } from "@/components/theme-toggle";
 
 // Tipos para os dados vindos da API
 type ModelResults = {
@@ -44,12 +44,7 @@ type Residual = {
   residual: number;
 };
 
-
-
-
-
 export default function ArsenicAnalysisDashboard() {
-
   // Estados para dados vindos da API
   const [modelResults, setModelResults] = useState<ModelResults>({
     coefficients: [0, 0, 0, 0, 0],
@@ -66,7 +61,6 @@ export default function ArsenicAnalysisDashboard() {
     mae: 0,
   });
   const [residualsData, setResidualsData] = useState<Residual[]>([]);
-
 
   const [predictionInputs, setPredictionInputs] = useState({
     idade: "30",
@@ -118,14 +112,17 @@ export default function ArsenicAnalysisDashboard() {
       {/* Header */}
       <header className="border-b bg-card">
         <div className="container mx-auto px-6 py-4">
-          <div className="flex items-center gap-3">
-            <div className="flex items-center justify-center w-10 h-10 bg-primary rounded-lg">
-              <Beaker className="w-6 h-6 text-primary-foreground" />
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <div className="flex items-center justify-center w-10 h-10 bg-primary rounded-lg">
+                <Beaker className="w-6 h-6 text-primary-foreground" />
+              </div>
+              <div>
+                <h1 className="text-2xl font-bold text-foreground">Análise de Arsênio</h1>
+                <p className="text-sm text-muted-foreground">Dashboard de Regressão Linear Múltipla</p>
+              </div>
             </div>
-            <div>
-              <h1 className="text-2xl font-bold text-foreground">Análise de Arsênio</h1>
-              <p className="text-sm text-muted-foreground">Dashboard de Regressão Linear Múltipla</p>
-            </div>
+            <ThemeToggle />
           </div>
         </div>
       </header>

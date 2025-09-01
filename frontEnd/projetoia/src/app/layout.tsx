@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { Suspense } from "react";
+import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -14,8 +15,7 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   title: "Análise de Arsênio - Dashboard Científico",
-  description: "Dashboard para análise de regressão linear múltipla sobre dados de arsênio",
-  generator: "v0.app",
+  description: "Dashboard para análise de regressão linear múltipla sobre dados de arsênio"
 };
 
 export default function RootLayout({
@@ -24,12 +24,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" suppressHydrationWarning>
       <body className={`font-sans ${dmSans.variable} antialiased`}>
-        <Suspense fallback={<div>Loading...</div>}>
-          {children}
-          <Analytics />
-        </Suspense>
+        <ThemeProvider defaultTheme="system" storageKey="arsenic-dashboard-theme">
+          <Suspense fallback={<div>Loading...</div>}>
+            {children}
+            <Analytics />
+          </Suspense>
+        </ThemeProvider>
       </body>
     </html>
   );
