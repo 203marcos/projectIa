@@ -48,12 +48,12 @@ class PredInput(BaseModel):
 @app.get("/api/modelo")
 def modelo():
     return {
-        "coeficientes": beta.tolist(),
-        "r2": regressaoMultipla.r2(y, y_pred),
-        "r2_ajustado": regressaoMultipla.r2_ajustado(y, y_pred, p=X.shape[1]),
-        "rmse": regressaoMultipla.rmse(y, y_pred),
-        "mse": regressaoMultipla.mse(y, y_pred),
-        "mae": regressaoMultipla.mae(y, y_pred),
+    "coefficients": beta.tolist(),
+    "r2": regressaoMultipla.r2(y, y_pred),
+    "r2_adjusted": regressaoMultipla.r2_ajustado(y, y_pred, p=X.shape[1]),
+    "rmse": regressaoMultipla.rmse(y, y_pred),
+    "mse": regressaoMultipla.mse(y, y_pred),
+    "mae": regressaoMultipla.mae(y, y_pred),
     }
 
 @app.post("/api/predizer")
