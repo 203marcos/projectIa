@@ -38,9 +38,9 @@ y_pred_alt = regressaoMultipla.prever(X_alt, beta_alt, intercept=True)
 # ===============================
 class PredInput(BaseModel):
     idade: float
-    uso_beber: float
-    uso_cozinhar: float
-    arsenio_agua: float
+    usoBeber: float
+    usoCozinhar: float
+    arsenioAgua: float
 
 # ===============================
 # Endpoints
@@ -58,9 +58,9 @@ def modelo():
 
 @app.post("/api/predizer")
 def predizer(data: PredInput):
-    X_novo = np.array([[data.idade, data.uso_beber, data.uso_cozinhar, data.arsenio_agua]])
+    X_novo = np.array([[data.idade, data.usoBeber, data.usoCozinhar, data.arsenioAgua]])
     y_novo = regressaoMultipla.prever(X_novo, beta, intercept=True)
-    return {"previsao": float(y_novo[0])}
+    return {"prediction": float(y_novo[0])}
 
 @app.get("/api/residuos")
 def residuos():
@@ -68,9 +68,9 @@ def residuos():
     tabela = [
         {
             "obs": int(i+1),
-            "y_observado": float(y[i]),
-            "y_predito": float(y_pred[i]),
-            "residuo": float(res[i])
+            "observed": float(y[i]),
+            "predicted": float(y_pred[i]),
+            "residual": float(res[i])
         }
         for i in range(len(y))
     ]
