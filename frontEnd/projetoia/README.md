@@ -25,14 +25,10 @@ This folder contains the front-end for the Arsenic Concentration Regression proj
 - UI components: `src/components/`
 - You can easily change the layout, colors, and add new features as needed.
 
-## Deployment
-
-You can deploy this app for free on [Vercel](https://vercel.com/). Just connect your GitHub repository and follow the instructions.
-
 ## Notes
 
 - Make sure the back-end API is running and accessible for the dashboard to work.
-- The layout is intentionally simple for demonstration and learning purposes.
+- The layout is intentionally simple, as the main focus of the project is to demonstrate multiple linear regression analysis.
 
 ---
 
