@@ -1,48 +1,32 @@
-# AV1 Project - Arsenic Analysis API
 
-This repository contains a data analysis and regression project, with a main focus on the Python FastAPI back-end.
+# Project: Arsenic Concentration Regression (AV1)
 
-## Back-end structure
+This repository was developed for a college assignment and is divided into two main parts: **back-end** and **front-end**.
 
-backEnd/
-- data/                (CSV dataset: Dataset Projeto IA.csv)
-- env/                 (Python virtual environment)
-- helpers/             (utility functions: data reading, regression, etc)
-- routes/              (API routes, main file: route.py)
-- src/                 (FastAPI app initialization)
-- test/                (unit tests)
-- requirements.txt     (project dependencies)
+## Overview
 
-## Main dependencies
+- **Back-end:** Built with Python and FastAPI, responsible for data analysis and regression (multiple linear regression) using a real dataset. All main logic, endpoints, and data processing are here.
+- **Front-end:** Built with Next.js (React + TypeScript). The layout is simple and functional, designed to display results and interact with the API. For more details about the front-end, check the `frontEnd` folder and its README inside.
 
-- fastapi
-- uvicorn
-- numpy
-- pandas
-- pydantic
+## Structure
 
-## How to run the back-end locally
+```
+projeto-final/
+├── backEnd/      # FastAPI backend, regression logic, API endpoints
+├── frontEnd/     # Next.js frontend, simple dashboard and UI
+```
 
-1. Go to the backEnd folder:
-	cd backEnd
-2. Activate the virtual environment:
-	source env/bin/activate
-3. Install dependencies:
-	pip install -r requirements.txt
-4. Start the API (for route.py):
-	uvicorn routes.route:app --reload
+## About the Back-end
 
-## Main endpoints
+The back-end implements multiple linear regression to analyze the relationship between arsenic concentration in nails and several predictors. It exposes endpoints for predictions, metrics, and model comparison. See `backEnd/README.md` for more technical details.
 
-- GET /api/modelo : returns regression model metrics and coefficients
-- POST /api/predizer : receives input and returns a prediction
-- GET /api/residuos : returns the model residuals table
-- GET /api/modelo-alternativo : returns metrics for an alternative model
+## About the Front-end
 
-## Notes
+The front-end is a minimal Next.js app that consumes the API and presents the results in a dashboard. You can find more information and usage instructions in the `frontEnd` folder.
 
-- CORS should be configured to allow your front-end domain (e.g., Vercel)
-- The front-end consumes the API via HTTP requests
+## How to Run
+
+See each folder (`backEnd` and `frontEnd`) for setup and usage instructions. The back-end requires Python and FastAPI, the front-end requires Node.js and Next.js.
 
 ---
 

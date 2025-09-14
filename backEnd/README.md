@@ -42,3 +42,4 @@ Multiple linear regression is a statistical technique used to model the relation
 
 This project demonstrates how to implement and interpret multiple linear regression **from scratch**, without using ready-made libraries like `sklearn`. All calculations are performed with `numpy`. The code is modular and can be adapted for similar regression problems.
 
+Author: Marcos Dias

@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# Front-end (Next.js) - Arsenic Regression Dashboard
 
-First, run the development server:
+This folder contains the front-end for the Arsenic Concentration Regression project, developed for a college assignment. The app is built with Next.js and TypeScript, and connects to the FastAPI back-end to display regression results and predictions in a simple dashboard layout.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## How to run locally
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. Install dependencies:
+	yarn install
+2. Start the development server:
+	yarn dev
+3. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Simple and clean dashboard UI
+- Uses [shadcn/ui](https://ui.shadcn.com/) component library for fast delivery, charts, and responsive design
+- Consumes the FastAPI back-end for predictions and metrics
+- Tabs for model info, prediction, residuals, and model comparison
+- Theme switcher (light/dark/system)
 
-## Learn More
+## Editing and Customization
 
-To learn more about Next.js, take a look at the following resources:
+- Main page: `src/app/page.tsx`
+- UI components: `src/components/`
+- You can easily change the layout, colors, and add new features as needed.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+You can deploy this app for free on [Vercel](https://vercel.com/). Just connect your GitHub repository and follow the instructions.
 
-## Deploy on Vercel
+## Notes
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Make sure the back-end API is running and accessible for the dashboard to work.
+- The layout is intentionally simple for demonstration and learning purposes.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+Author: Marcos Dias
